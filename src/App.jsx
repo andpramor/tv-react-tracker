@@ -5,7 +5,7 @@ import { MoviesList } from './components/MoviesList/MoviesList'
 function App () {
   return (
     <div style={{ padding: '15px' }}>
-      <h1 style={{ fontWeight: 'bolder', fontSize: '30px', textAlign: 'center' }}>TV Tracker Project</h1>
+      <h1>TV Tracker Project</h1>
       <MoviesList movies={movies} />
     </div>
   )
