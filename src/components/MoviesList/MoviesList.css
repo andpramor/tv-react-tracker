@@ -1,0 +1,54 @@
+.moviesList {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.moviesList li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: 4px;
+    background: #111;
+    color: #fff;
+    padding: 1rem;
+    transition: filter 0.3s;
+}
+
+.moviesList--imgContainer {
+    width: 100%;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+    position: relative;
+}
+
+.moviesList--imgContainer img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.moviesList li:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.moviesList:has(li:hover) li:not(:hover) {
+    filter: blur(5px) grayscale(80%);
+}
+
+.moviesList--imgContainer img:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+@media screen and (min-width: 992px) {
+    .moviesList {
+        width: 80%;
+    }
+}
