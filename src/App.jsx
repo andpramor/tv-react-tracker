@@ -10,7 +10,7 @@ function App () {
   const { search, updateSearch, searchError } = useSearch()
   const { movies, getMovies, loading, error } = useMovies({ search, sort })
 
-  const debouncedGetMovies = useCallback(
+  const debouncedGetMovies = useCallback( // Won't rewrite the callback every rerender, this memoizes it
     debounce(search => getMovies({ search }), 300
     ), [getMovies])
 
