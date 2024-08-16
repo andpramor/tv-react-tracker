@@ -8,7 +8,7 @@ import { useSearch } from './hooks/useSearch'
 function App () {
   const [sort, setSort] = useState(false)
   const { search, updateSearch, searchError } = useSearch()
-  const { movies, getMovies, loading, error } = useMovies({ search, sort })
+  const { movies, getMovies, loading, moviesError } = useMovies({ search, sort })
 
   const debouncedGetMovies = useCallback( // Won't rewrite the callback every rerender, this memoizes it
     debounce(search => getMovies({ search }), 300
