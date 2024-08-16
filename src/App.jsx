@@ -29,8 +29,6 @@ function App () {
     setSort(!sort)
   }
 
-  getMovies()
-
   return (
     <div style={{ padding: '15px', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
       <header>

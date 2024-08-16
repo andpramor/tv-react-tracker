@@ -4,10 +4,10 @@ export const MoviesList = ({ movies }) => {
   return (
     <ul className='moviesList'>
       {movies.map(movie =>
-        <li key={movie.imdbID}>
-          <p>{movie.Title}</p>
+        <li key={movie.id}>
+          <p>{movie.title}</p>
           <div className='moviesList--imgContainer'>
-            <img src={movie.Poster} alt={`${movie.Title} poster`} />
+            <img src={movie.poster} alt={`${movie.title} poster`} />
           </div>
         </li>
       )}
