@@ -14,7 +14,7 @@
     background: #111;
     color: #fff;
     padding: 1rem;
-    transition: filter 0.3s;
+    transition: filter 0.3s, transform 0.3s;
 }
 
 .moviesList--imgContainer {
@@ -37,18 +37,24 @@
 
 .moviesList li:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    img {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
 }
 
 .moviesList:has(li:hover) li:not(:hover) {
     filter: blur(5px) grayscale(80%);
+    transform: scale(0.95);
 }
 
-.moviesList--imgContainer img:hover {
-    transform: translate(-50%, -50%) scale(1.1);
+@media screen and (min-width: 668px) {
+    .moviesList {
+        width: 80%;
+    }
 }
 
 @media screen and (min-width: 992px) {
     .moviesList {
-        width: 80%;
+        width: 60%;
     }
 }
