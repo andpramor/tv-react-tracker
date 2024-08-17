@@ -29,7 +29,7 @@ export const SearchBar = ({ search, searchError, updateSearch, getMovies, sort, 
           <input value={search} onChange={handleChange} type='text' name='movieTitle' placeholder='Avengers, The Matrix, ...' />
         </label>
         {searchError &&
-          <p style={{ color: 'red' }}>
+          <p className='searchBar--error'>
             {searchError}
           </p>}
       </fieldset>
