@@ -12,7 +12,7 @@ export const useSearch = () => {
     }
 
     if (search === '') {
-      setSearchError('*Obligatory field.')
+      setSearchError('*Mandatory field.')
       return
     }
     if (search.length < 3) {
