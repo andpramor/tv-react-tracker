@@ -35,6 +35,23 @@
     outline: 1px solid cadetblue;
 }
 
+.searchBar--checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    cursor: pointer;
+}
+
+.searchBar input[type='checkbox'] {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+
+.searchBar input[type='checkbox']:checked {
+    accent-color: cadetblue;
+}
+
 .searchBar--filters {
     display: flex;
     flex-direction: column;

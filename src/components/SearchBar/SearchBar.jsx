@@ -34,11 +34,11 @@ export const SearchBar = ({ search, searchError, updateSearch, getMovies, sort, 
           </p>}
       </fieldset>
       <fieldset className='searchBar--filters'>
-        <label onClick={toggleSort} htmlFor='sortCheckbox'>
+        <label onClick={toggleSort} htmlFor='sortCheckbox' className='searchBar--checkboxContainer'>
           <input onChange={toggleSort} checked={sort} type='checkbox' name='sortCheckbox' />
           Order by title
         </label>
-        <label htmlFor='anotherCheckbox'>
+        <label htmlFor='anotherCheckbox' className='searchBar--checkboxContainer'>
           <input type='checkbox' name='anotherCheckbox' />
           Order by year (to be done)
         </label>
