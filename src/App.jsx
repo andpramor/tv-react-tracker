@@ -8,15 +8,15 @@ import { useSearch } from './hooks/useSearch'
 function App () {
   const [sort, setSort] = useState(false)
   const { search, updateSearch, searchError } = useSearch()
-  const { movies, getMovies, loading, moviesError } = useMovies({ search, sort })
+  const { movies, getMovies, loading } = useMovies({ search, sort }) // moviesError disponible también
 
-  const debouncedGetMovies = useCallback( // Won't rewrite the callback every rerender, this memoizes it
-    debounce(search => getMovies({ search }), 300
+  const debouncedGetMovies = useCallback( // Memoize callback so it doesn't rewrite every rerender
+    debounce(search => getMovies({ search: search.trim() }), 300
     ), [getMovies])
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    getMovies({ search })
+    getMovies({ search: search.trim() })
   }
 
   const handleChange = (event) => {
@@ -30,10 +30,10 @@ function App () {
   }
 
   return (
-    <div style={{ padding: '15px', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
+    <div className='app'>
+      <h1>TV Tracker</h1>
       <header>
-        <h1>Little movies search engine</h1>
-        <form onSubmit={handleSubmit} className='form'>
+        <form onSubmit={handleSubmit} className='searchForm' style={{ display: 'flex', justifyContent: 'center', gap: '1rem', border: '1px solid black', padding: '0.5rem', borderRadius: '8px', boxShadow: '0 0 5px gray' }}>
           <label htmlFor='movieTitle'>
             <input value={search} onChange={handleChange} type='text' name='movieTitle' placeholder='Avengers, The Matrix, ...' />
           </label>
@@ -43,10 +43,12 @@ function App () {
           </label>
           <button type='submit'>Search</button>
         </form>
-        {searchError && <p style={{ color: 'red' }}>{searchError}</p>}
+        {searchError &&
+          <p style={{ color: 'red' }}>
+            {searchError}
+          </p>}
       </header>
-      <h1>TV Tracker</h1>
-      <main style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+      <main className='app--main'>
         {!search ? <></> : loading ? <p>Loading...</p> : <MoviesList movies={movies} />}
       </main>
     </div>

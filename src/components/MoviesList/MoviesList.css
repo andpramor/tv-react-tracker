@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
+    cursor: default;
     border-radius: 4px;
     background: #111;
     color: #fff;
@@ -22,6 +23,8 @@
     aspect-ratio: 2/3;
     overflow: hidden;
     position: relative;
+    border-radius: 4px;
+    transition: box-shadow 0.3s;
 }
 
 .moviesList--imgContainer img {
@@ -35,15 +38,22 @@
     transition: transform 0.3s;
 }
 
+.moviesList--imgContainer p {
+    color: gray;
+}
+
 .moviesList li:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    .moviesList--imgContainer:has(img) {
+        box-shadow: 0 0 8px rgba(255, 255, 255,0.5);
+    }
     img {
         transform: translate(-50%, -50%) scale(1.1);
     }
 }
 
 .moviesList:has(li:hover) li:not(:hover) {
-    filter: blur(5px) grayscale(80%);
+    filter: grayscale(80%);
     transform: scale(0.95);
 }
 
