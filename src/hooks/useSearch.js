@@ -12,7 +12,7 @@ export const useSearch = () => {
     }
 
     if (search === '') {
-      setSearchError("You can't search an empty title.")
+      setSearchError('*Obligatory field.')
       return
     }
     if (search.length < 3) {

@@ -48,23 +48,11 @@
         box-shadow: 0 0 8px rgba(255, 255, 255,0.5);
     }
     img {
-        transform: translate(-50%, -50%) scale(1.1);
+        transform: translate(-50%, -50%) scale(1.05);
     }
 }
 
 .moviesList:has(li:hover) li:not(:hover) {
     filter: grayscale(80%);
     transform: scale(0.95);
-}
-
-@media screen and (min-width: 668px) {
-    .moviesList {
-        width: 80%;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .moviesList {
-        width: 60%;
-    }
 }
