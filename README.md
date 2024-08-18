@@ -2,4 +2,4 @@
 Using React and (for now) OMDb's API.
 
 ## Live at
-andrespradomorgaz.github.io/tvtracker
+andpramor.github.io/tv-react-tracker
