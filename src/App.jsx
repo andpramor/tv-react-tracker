@@ -12,7 +12,7 @@ function App () {
 
   return (
     <div className='app'>
-      <h1>TV Tracker</h1>
+      <h1>TVLogger</h1>
       <main className='app--main'>
         <section className='app--section'>
           <SearchBar search={search} searchError={searchError} updateSearch={updateSearch} getMovies={getMovies} sort={sort} setSort={setSort} />
