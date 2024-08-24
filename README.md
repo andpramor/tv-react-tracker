@@ -1,4 +1,4 @@
 # TV Tracker
 Using React and (for now) OMDb's API.
 
-<a href="andrespradomorgaz.com/tv-react-tracker">Live demo</a>
+<a href="https://andrespradomorgaz.com/tv-react-tracker">Live demo</a>
