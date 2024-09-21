@@ -1,9 +1,11 @@
 .app {
+    margin: 0 auto;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    min-height: 100dvh;
 }
 
 .app--main {
@@ -21,13 +23,13 @@
 }
 
 @media screen and (min-width: 768px) {
-    .app--section {
+    .app {
         width: 80%;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .app--section {
+    .app {
         width: 60%;
     }
 }

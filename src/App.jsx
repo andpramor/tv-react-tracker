@@ -4,6 +4,7 @@ import { MoviesList } from './components/MoviesList/MoviesList'
 import { SearchBar } from './components/SearchBar/SearchBar'
 import { useMovies } from './hooks/useMovies'
 import { useSearch } from './hooks/useSearch'
+import { Footer } from './components/Footer/Footer'
 
 function App () {
   const [sort, setSort] = useState(false)
@@ -25,6 +26,7 @@ function App () {
               : loading ? <p>Loading...</p> : <MoviesList movies={movies} />}
         </section>
       </main>
+      <Footer />
     </div>
   )
 }
